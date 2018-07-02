@@ -17,8 +17,8 @@ $(document).ready( function() {
     $('#addTrainButton').on('click', function() {
         
         // defining user inputs as variables
-        var trainName = $('#trainNameInput').val().trim();
-            console.log(trainName);
+        var lineName = $('#lineNameInput').val().trim();
+            console.log(lineName);
         var destination = $('#destinationInput').val().trim();
             console.log(destination);
         var trainTime = moment($("#trainTimeInput").val().trim(), "HH:mm").subtract(10, "years").format("X");;
@@ -27,7 +27,7 @@ $(document).ready( function() {
             console.log(frequency);
 
         var newTrain = {
-            trainName: trainName,
+            lineName: lineName,
             destination: destination,
             trainTime: trainTime,
             frequency: frequency
@@ -35,41 +35,38 @@ $(document).ready( function() {
         // pushing user's new train to firebase
         trainData.ref().push(newTrain);
 
+        // clear form fields after submission
+        $('#lineNameInput, #destinationInput, #trainTimeInput, #frequencyInput').val('');
+
+        // stop page from refreshing
+        return false;
+
     }); // closing addTrainButton click function
 
-    
-    // need to hook in firebase
-    // need to hook in moment.js
-    // from form ..
-        // need to grab train name
-        // need to grab train destination
-        // need to grab first train time
-        // need to grab train frequency
-    // and save as variables
-    
+    trainData.ref().on('child_added', function(childSnapshot, prevChildKey) {
+        // make sure this is working properly
+        console.log(childSnapshot.val());
 
+        //
+        var firebaseLineName = childSnapshot.val().lineName;
+        var firebaseDestination = childSnapshot.val().destination;
+        var firebaseTrainTime = childSnapshot.val().trainTime;
+        var firebaseFrequency = childSnapshot.val().frequency;
 
+        //
+        var diffTime = moment().diff(moment.unix(firebaseTrainTime), "minutes");
+        var timeRemaining = moment().diff(moment.unix(firebaseTrainTime), "minutes") % firebaseFrequency;
+        var minutes = firebaseFrequency - timeRemaining;
+            console.log(minutes);
+        var nextTrainTime = moment().add(minutes, "m").format("hh:mm A");
+            console.log(nextTrainTime);
+            console.log(moment().format("hh:mm A"));
+            console.log(nextTrainTime);
+            console.log(moment().format("X"));
 
+        // appending trainData to table
+        $("#trainTable > tbody").append("<tr><td>" + firebaseLineName + "</td><td>"+ firebaseDestination + "</td><td>"  + "every " + firebaseFrequency + " minutes" + "</td><td>" + nextTrainTime + "</td><td>" + minutes + " minutes away" + "</td></tr>");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }); // closing trainData.ref() function
 
 }); // closing ready function

@@ -24,44 +24,28 @@
 <div class="container">
     <!-- begin table for train schedule -->
     <h5 class="text-center">Train Schedule</h5>
-    <table class="table">
+    <table id="trainTable" class="table">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Line</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Frequency</th>
+            <th scope="col">Next Arrival</th>
+            <th scope="col">Minutes Away</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            </tr>
+        <!-- new train data goes here -->
         </tbody>
     </table>
     <div class="dropdown-divider"></div>
         
-    <!-- begin form to add train -->
+    <!-- begin form to add new train -->
     <h5 class="formTitle text-center">Add Train</h5>
     <form>
         <div class="form-group">
-            <label for="trainNameInput">Train Name</label>
-            <input type="text" class="form-control" id="trainNameInput">
+            <label for="lineNameInput">Line</label>
+            <input type="text" class="form-control" id="lineNameInput">
         </div>
         <div class="form-group">
             <label for="destinationInput">Destination</label>
@@ -77,7 +61,7 @@
             <input type="text" class="form-control" id="frequencyInput">
             <small id="frequencyHelp" class="form-text">Frequency in minutes</small>
         </div>
-        <button id="addTrainButton" type="submit" class="btn btn-primary">Add</button>
+        <button id="addTrainButton" type="submit" class="btn btn-primary">Add Train</button>
     </form>
 
     <!-- begin footer -->
