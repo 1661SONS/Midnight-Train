@@ -79,11 +79,18 @@ $(document).ready( function() {
             console.log(nextTrainTime);
             console.log(moment().format("X"));
 
-        // appending trainData to table
-        $("#trainTable > tbody").append("<tr><td>" + firebaseLineName + "</td><td>"+ firebaseDestination + "</td><td>"  + "every " + firebaseFrequency + " minutes" + "</td><td>" + nextTrainTime + "</td><td>" + minutes + " minutes away" + "</td></tr>");
+        // appending trainData and remove button to table
+        $("#trainTable > tbody").append("<tr><td>" + firebaseLineName + "</td><td>"+ firebaseDestination + "</td><td>"  + "every " + firebaseFrequency + " minutes" + "</td><td>" + nextTrainTime + "</td><td>" + minutes + " minutes away" + "</td>" + "<td><button class='btn btn-outline-dark deleteRow'>Remove</button></td></tr>");
 
         // playing audio
         audio.play();
+
+        // delete table row on button click from UI and firebase
+        $('.deleteRow').click(function(){
+            $(this).parents('tr').first().remove();
+            var trainData = firebase.database().ref();
+            trainData.remove();
+        });
 
     }); // closing trainData.ref() function
 

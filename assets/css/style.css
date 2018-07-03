@@ -32,11 +32,11 @@ body {
 .form-control, .form-control:focus {
     background-color: #e4f2f7;
 }
-.form-control:focus {
+.form-control:focus, .btn:focus {
     box-shadow: 0 0 0 0.2rem rgba(187,57,155,.25);
     border-color: #a7338b;
 }
-.btn {
+.btn-primary {
     background-color: #a7338b;
     border-color: #0F2931;
 }
