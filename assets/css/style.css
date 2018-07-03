@@ -20,7 +20,7 @@ body {
     color: #a7338b;
 }
 .formTitle, .table {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 .table .thead-dark th {
     background-color: #0F2931;
