@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Train Time</title>
+    <title>Midnight Train</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/train-v3.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
     <!-- bootstrap stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <!-- custom css stylesheet -->
@@ -12,36 +15,38 @@
 </head>
 <body>
 <!-- begin hero image -->
-<div class="card bg-dark text-white hero">
-    <img class="card-img" src="assets/images/night-traffic-reduced.jpg" alt="Card image">
-    <div class="card-img-overlay text-center">
-        <h2 class="card-title">Train Time</h2>
-        <p class="card-text">is MARTA really smarta?</p>
+<div class="card text-white hero">
+    <img class="mx-auto card-img hero-img" src="assets/images/gladys-v2.png" alt="hero gif">
+    <div class="card-img-overlay text-center mx-auto">
+        <h1 class="card-title midnightHero">Midnight Train</h1>
+        <h4>sound on!</h4>
     </div>
 </div>
 
 <!-- begin main content -->
 <div class="container">
     <!-- begin table for train schedule -->
-    <h5 class="text-center">Train Schedule</h5>
-    <table id="trainTable" class="table">
-        <thead class="thead-dark">
-            <tr>
-            <th scope="col">Line</th>
-            <th scope="col">Destination</th>
-            <th scope="col">Frequency</th>
-            <th scope="col">Next Arrival</th>
-            <th scope="col">Minutes Away</th>
-            </tr>
-        </thead>
-        <tbody>
-        <!-- new train data goes here -->
-        </tbody>
-    </table>
+    <h3 class="text-center midnightTitle">Schedule &nbsp;<span><img class="trainImg" src="assets/images/train-v3.png" alt="train icon"></span></h3>
+    <div class="table-responsive">
+        <table id="trainTable" class="table">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Line</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Countdown</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- new train data goes here -->
+            </tbody>
+        </table>
+    </div>
     <div class="dropdown-divider"></div>
         
     <!-- begin form to add new train -->
-    <h5 class="formTitle text-center">Add Train</h5>
+    <h3 class="formTitle text-center midnightTitle">Add Train &nbsp;<span><img class="trainImg" src="assets/images/train-v3.png" alt="train icon"></span></h3>
     <form>
         <div class="form-group">
             <label for="lineNameInput">Line</label>

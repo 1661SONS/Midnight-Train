@@ -1,14 +1,26 @@
 body {
     color: #0F2931;
 }
-.formTitle, .table {
-    margin-top: 2rem;
+.heroTitle {
+    color: white;
+    font-size: 2.8rem;
 }
-.nav-link:hover, .btn:hover {
-    text-decoration: underline;    
+.midnightHero, .midnightTitle {
+    font-family: 'Bungee Shade', cursive;
+    margin-top: 1rem;
 }
 .hero {
     margin-bottom: 2rem;
+}
+.trainImg {
+    width: 12.5%;
+    height: 12.5%;
+}
+.midnightTitle {
+    color: #a7338b;
+}
+.formTitle, .table {
+    margin-top: 2rem;
 }
 .table .thead-dark th {
     background-color: #0F2931;
@@ -23,6 +35,14 @@ body {
 .form-control:focus {
     box-shadow: 0 0 0 0.2rem rgba(187,57,155,.25);
     border-color: #a7338b;
+}
+.btn {
+    background-color: #a7338b;
+    border-color: #0F2931;
+}
+.btn:hover {
+    text-decoration: underline;
+    background-color: #0F2931; 
 }
 footer {
     font-size: 0.5rem;

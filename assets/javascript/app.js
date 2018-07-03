@@ -1,6 +1,21 @@
 $(document).ready( function() {
+    
+    // play random clip of Midnight Train to Georgia by Gladys Knight & The Pips on form submission
+    var audio = new Audio(),
+    i = 0;
+    var playlist = new Array('assets/audio/gladys-v1.mp3', 'assets/audio/gladys-v2.mp3', 'assets/audio/gladys-v3.mp3');
 
-    // plug in firebase
+    audio.addEventListener('ended', function () {
+        i = ++i < playlist.length ? i : 0;
+        console.log(i)
+        audio.src = playlist[i];
+        // audio.play(); commented this out so each clip would play only once
+        }, true);
+        audio.volume = 0.5;
+        audio.loop = false;
+        audio.src = playlist[0];
+    
+    // initialize firebase
     var config = {
         apiKey: "AIzaSyCwDUwCV7Wq4ItyVp6KeLZ-GL0m37_LF2M",
         authDomain: "marta-smarta.firebaseapp.com",
@@ -66,6 +81,9 @@ $(document).ready( function() {
 
         // appending trainData to table
         $("#trainTable > tbody").append("<tr><td>" + firebaseLineName + "</td><td>"+ firebaseDestination + "</td><td>"  + "every " + firebaseFrequency + " minutes" + "</td><td>" + nextTrainTime + "</td><td>" + minutes + " minutes away" + "</td></tr>");
+
+        // playing audio
+        audio.play();
 
     }); // closing trainData.ref() function
 

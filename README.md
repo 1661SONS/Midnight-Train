@@ -1,4 +1,4 @@
-# Train-Time
+# Midnight Train
 
 ##### GT Unit 07 Homework Assignment
 
@@ -12,9 +12,9 @@ Train schedule webapp using Firebase to store departure and arrival data.
     
 * Destination 
 
-* First Train Time -- in military time
+* First Train Time -- in Military Time
 
-* Frequency -- in minutes
+* Frequency -- in Minutes
 
 ### Using the data grabbed from the form, the webapp will do the following:
   
